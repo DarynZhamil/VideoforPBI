@@ -32,8 +32,11 @@ DZO_ORDER = [
 ]
 
 
-def sheet_to_records(df: pd.DataFrame) -> list[dict]:
-    """Конвертирует лист в список словарей (заголовки берём из строки 1)."""
+_META_COLS = {"№/№", "Код (шифр)", "Наименование (расшифровка) кода", "Един изм"}
+
+
+def sheet_to_wide_records(df: pd.DataFrame) -> list[dict]:
+    """Старый wide-формат: одна запись = код × все ДЗО (для svod_summa)."""
     headers = [str(h).strip() if pd.notna(h) else "" for h in df.iloc[1].tolist()]
     records: list[dict] = []
     for idx in range(2, len(df)):
@@ -45,7 +48,6 @@ def sheet_to_records(df: pd.DataFrame) -> list[dict]:
             val = row[col_idx]
             if pd.isna(val):
                 continue
-            # числа оставляем числами, остальное в строку
             if isinstance(val, (int, float)):
                 rec[h] = val
             else:
@@ -57,6 +59,56 @@ def sheet_to_records(df: pd.DataFrame) -> list[dict]:
     return records
 
 
+def sheet_to_long_records(df: pd.DataFrame) -> list[dict]:
+    """Конвертирует широкую таблицу (один код × 15 ДЗО в столбцах)
+    в длинный формат: одна запись = (код × ОДНО ДЗО).
+
+    Это критически важно: модель не сможет «съехать» по столбцам,
+    т.к. для каждого ДЗО запись содержит ТОЛЬКО его значение.
+    Пустые ячейки порождают записи с value=null — модель видит явный «пусто».
+    """
+    headers = [str(h).strip() if pd.notna(h) else "" for h in df.iloc[1].tolist()]
+
+    records: list[dict] = []
+    for idx in range(2, len(df)):
+        row = df.iloc[idx]
+        code = row[2] if len(row) > 2 else None
+        name = row[3] if len(row) > 3 else None
+        unit = row[4] if len(row) > 4 else None
+
+        if pd.isna(code) and pd.isna(name):
+            continue
+        # Строки-заголовки разделов (Код есть, но это просто 'OPL'/'PEN' без номера)
+        # — пропускаем, они только структурируют документ
+        code_s = str(code).strip() if pd.notna(code) else ""
+        name_s = str(name).strip() if pd.notna(name) else ""
+        unit_s = str(unit).strip() if pd.notna(unit) else ""
+        if code_s and " " not in code_s and pd.isna(unit) and name_s:
+            # это header-строка раздела — пропускаем
+            continue
+        if not code_s:
+            continue
+
+        # Проходим по каждому ДЗО-столбцу
+        for col_idx, h in enumerate(headers):
+            if not h or h in _META_COLS:
+                continue
+            val = row[col_idx]
+            if pd.isna(val):
+                continue
+            v = val if isinstance(val, (int, float)) else str(val).strip()
+            if v == "" or v is None:
+                continue
+            records.append({
+                "code": code_s,
+                "name": name_s,
+                "unit": unit_s,
+                "dzo": h,
+                "value": v,
+            })
+    return records
+
+
 def main() -> None:
     if not SRC_XLSX.exists():
         raise SystemExit(f"Не найден файл: {SRC_XLSX}")
@@ -65,8 +117,10 @@ def main() -> None:
     df_svod = pd.read_excel(SRC_XLSX, sheet_name="Свод", header=None)
     df_summa = pd.read_excel(SRC_XLSX, sheet_name="Свод сумма", header=None)
 
-    svod = sheet_to_records(df_svod)
-    summa = sheet_to_records(df_summa)
+    # svod_razmer — LONG формат: критично, чтобы модель не путала ДЗО на пустых ячейках
+    svod = sheet_to_long_records(df_svod)
+    # svod_summa — WIDE формат: там почти все ячейки числовые, экономим токены
+    summa = sheet_to_wide_records(df_summa)
 
     result = {
         "meta": {
@@ -74,6 +128,14 @@ def main() -> None:
             "source_file": SRC_XLSX.name,
             "mrp_2026": 4325,
             "currency": "тенге",
+            "format": "long",  # одна запись = (code × dzo); пустые ячейки исключены
+            "fields": {
+                "code":  "Код выплаты (OPL 1, MP 8, PEN 3 и т.д.)",
+                "name":  "Наименование (расшифровка) кода",
+                "unit":  "Единица измерения (МРП / ЧТС / МТС/МДО / % / тенге / кал дни)",
+                "dzo":   "Дочерняя организация",
+                "value": "Размер выплаты (для svod_razmer) или сумма в тенге (для svod_summa)",
+            },
             "terms": {
                 "МРП": "Месячный расчётный показатель (4 325 тенге в 2026 году)",
                 "ЧТС": "Часовая тарифная ставка",
