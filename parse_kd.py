@@ -31,6 +31,17 @@ DZO_ORDER = [
     "МТК", "ОМС", "ККС", "УДТВ", "Кэтеринг", "КазГПЗ", "Каспий Битум",
 ]
 
+# Маппинг имени листа в каноническое имя ДЗО (для парсинга 16 листов ДЗО)
+SHEET_TO_DZO = {
+    "ОМГ": "ОМГ", "ММГ": "ММГ", "КБМ": "КБМ", "ЭМГ": "ЭМГ",
+    "ОСК": "ОСК", "ОТК": "ОТК", "ОКК": "ОКК", "МЭМ": "МЭМ",
+    "МТК": "МТК", "ОМС ": "ОМС", "ОМС": "ОМС",
+    "ККС": "ККС", "УДТВ": "УДТВ", "Кэтеринг": "Кэтеринг",
+    "КАЗГПЗ": "КазГПЗ", "КазГПЗ": "КазГПЗ",
+    "Кбитум": "Каспий Битум", "Каспий Битум": "Каспий Битум",
+    "КМГ секьюрити": "КМГ Секьюрити",
+}
+
 
 _META_COLS = {"№/№", "Код (шифр)", "Наименование (расшифровка) кода", "Един изм"}
 
@@ -112,6 +123,71 @@ def sheet_to_long_records(df: pd.DataFrame) -> list[dict]:
     return records
 
 
+def _detect_dzo_columns(df: pd.DataFrame) -> dict:
+    """Авто-детекция колонок на листе ДЗО.
+    Возвращает dict с ключами: sum, qty, code, size, name.
+    Берёт ПРАВЫЕ совпадения для sum/qty — они относятся к 2025 году
+    (на листах две группы колонок: 2024 и 2025 годы).
+    """
+    cols = {"sum": None, "qty": None, "code": None, "size": None, "name": None}
+    for r in range(min(8, len(df))):
+        for c in range(df.shape[1]):
+            v = df.iat[r, c]
+            if pd.isna(v):
+                continue
+            s = str(v)
+            if "Сумма тыс" in s:
+                cols["sum"] = c  # правое совпадение перезапишет левое = 2025
+            elif "Количество единиц" in s:
+                cols["qty"] = c
+            elif s.strip() == "Код":
+                cols["code"] = c
+            elif s.strip() == "Размер":
+                cols["size"] = c
+            elif "Наименование пункта" in s and cols["name"] is None:
+                cols["name"] = c
+    return cols
+
+
+def parse_dzo_sheet(df: pd.DataFrame, dzo_name: str) -> list[dict]:
+    """Парсит лист одного ДЗО → список записей с численностью и суммой за 2025 год."""
+    cols = _detect_dzo_columns(df)
+    if cols["code"] is None or (cols["qty"] is None and cols["sum"] is None):
+        return []
+
+    records: list[dict] = []
+    for i in range(len(df)):
+        code_v = df.iat[i, cols["code"]]
+        if pd.isna(code_v):
+            continue
+        code_s = str(code_v).strip()
+        # Пропускаем общий шифр "KD" и строки без конкретного кода
+        if not code_s or code_s == "KD" or " " not in code_s:
+            continue
+
+        qty = df.iat[i, cols["qty"]] if cols["qty"] is not None else None
+        sum_ = df.iat[i, cols["sum"]] if cols["sum"] is not None else None
+        size = df.iat[i, cols["size"]] if cols["size"] is not None else None
+        name = df.iat[i, cols["name"]] if cols["name"] is not None else None
+
+        # Запись имеет смысл только если есть хотя бы один из показателей
+        if pd.isna(qty) and pd.isna(sum_):
+            continue
+
+        # Компактная запись: только то, чего нет в svod_razmer/summa.
+        # name/size опускаем — они уже есть в свод-таблицах по тому же (code, dzo).
+        rec: dict = {"code": code_s, "dzo": dzo_name}
+        if pd.notna(qty):
+            try:
+                rec["headcount"] = int(qty)
+            except (ValueError, TypeError):
+                rec["headcount"] = qty
+        if pd.notna(sum_) and isinstance(sum_, (int, float)):
+            rec["sum_thousand_tenge"] = round(float(sum_), 1)
+        records.append(rec)
+    return records
+
+
 def main() -> None:
     if not SRC_XLSX.exists():
         raise SystemExit(f"Не найден файл: {SRC_XLSX}")
@@ -125,19 +201,47 @@ def main() -> None:
     svod = sheet_to_long_records(df_svod)
     summa = sheet_to_long_records(df_summa)
 
+    # Парсим 16 листов ДЗО → численность + сумма за 2025 для каждого (code, dzo)
+    xl = pd.ExcelFile(SRC_XLSX)
+    dzo_details: list[dict] = []
+    for sheet_name in xl.sheet_names:
+        if sheet_name in ("Свод", "Свод сумма"):
+            continue
+        dzo_canonical = SHEET_TO_DZO.get(sheet_name)
+        if not dzo_canonical:
+            print(f"  ⚠ лист {sheet_name!r} не сопоставлен ДЗО — пропуск")
+            continue
+        df_dzo = pd.read_excel(SRC_XLSX, sheet_name=sheet_name, header=None)
+        recs = parse_dzo_sheet(df_dzo, dzo_canonical)
+        dzo_details.extend(recs)
+        print(f"  list {sheet_name!r:25s} -> {len(recs)} records")
+
     result = {
         "meta": {
             "document": "Коллективные договора КМГ",
             "source_file": SRC_XLSX.name,
             "mrp_2026": 4325,
-            "currency": "тенге",
             "format": "long",  # одна запись = (code × dzo); пустые ячейки исключены
-            "fields": {
+            "fields_svod_razmer": {
                 "code":  "Код выплаты (OPL 1, MP 8, PEN 3 и т.д.)",
                 "name":  "Наименование (расшифровка) кода",
                 "unit":  "Единица измерения (МРП / ЧТС / МТС/МДО / % / тенге / кал дни)",
                 "dzo":   "Дочерняя организация",
-                "value": "Размер выплаты (для svod_razmer) или сумма в тенге (для svod_summa)",
+                "value": "Размер ПОЛОЖЕННОЙ выплаты — норматив (в единицах unit)",
+            },
+            "fields_svod_summa": {
+                "code":  "Код выплаты",
+                "name":  "Наименование",
+                "unit":  "Поле справочное (норматив unit) — НЕ единица value",
+                "dzo":   "Дочерняя организация",
+                "value": "ФАКТ выплат за период в ТЫСЯЧАХ тенге (тыс.тнг). Умножай на 1000 для тенге.",
+            },
+            "fields_dzo_details": {
+                "code": "Код выплаты (как в svod_razmer/summa)",
+                "dzo": "Дочерняя организация",
+                "headcount": "Численность работников, получивших эту выплату в 2025",
+                "sum_thousand_tenge": "Фактическая сумма за 2025 в ТЫСЯЧАХ тенге (как в svod_summa)",
+                "_note": "Данные за 2025 год. ЭМГ и КМГ Секьюрити отсутствуют — у них другая структура листа.",
             },
             "terms": {
                 "МРП": "Месячный расчётный показатель (4 325 тенге в 2026 году)",
@@ -150,8 +254,9 @@ def main() -> None:
             },
         },
         "dzo_list": DZO_ORDER,
-        "svod_razmer": svod,  # размер выплат (МРП / ЧТС / % / суммы)
-        "svod_summa": summa,  # денежный эквивалент по факту
+        "svod_razmer": svod,    # норматив: что положено по КД (МРП / ЧТС / % / суммы)
+        "svod_summa": summa,    # факт: сколько выплачено за период (в тыс.тнг)
+        "dzo_details": dzo_details,  # численность + сумма из 16 листов ДЗО (за 2025)
     }
 
     OUT_JSON.write_text(
@@ -163,7 +268,7 @@ def main() -> None:
     chars = len(json.dumps(result, ensure_ascii=False))
     print(f"OK -> {OUT_JSON}")
     print(f"  размер: {size_kb:,.1f} KB")
-    print(f"  строк: размер={len(svod)}, сумма={len(summa)}")
+    print(f"  строк: svod_razmer={len(svod)}, svod_summa={len(summa)}, dzo_details={len(dzo_details)}")
     print(f"  ~токенов: {chars // 3:,}")
 
 

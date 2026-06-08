@@ -3,14 +3,27 @@
     "document": "Коллективные договора КМГ",
     "source_file": "Коллективные договора.xlsx",
     "mrp_2026": 4325,
-    "currency": "тенге",
     "format": "long",
-    "fields": {
+    "fields_svod_razmer": {
       "code": "Код выплаты (OPL 1, MP 8, PEN 3 и т.д.)",
       "name": "Наименование (расшифровка) кода",
       "unit": "Единица измерения (МРП / ЧТС / МТС/МДО / % / тенге / кал дни)",
       "dzo": "Дочерняя организация",
-      "value": "Размер выплаты (для svod_razmer) или сумма в тенге (для svod_summa)"
+      "value": "Размер ПОЛОЖЕННОЙ выплаты — норматив (в единицах unit)"
+    },
+    "fields_svod_summa": {
+      "code": "Код выплаты",
+      "name": "Наименование",
+      "unit": "Поле справочное (норматив unit) — НЕ единица value",
+      "dzo": "Дочерняя организация",
+      "value": "ФАКТ выплат за период в ТЫСЯЧАХ тенге (тыс.тнг). Умножай на 1000 для тенге."
+    },
+    "fields_dzo_details": {
+      "code": "Код выплаты (как в svod_razmer/summa)",
+      "dzo": "Дочерняя организация",
+      "headcount": "Численность работников, получивших эту выплату в 2025",
+      "sum_thousand_tenge": "Фактическая сумма за 2025 в ТЫСЯЧАХ тенге (как в svod_summa)",
+      "_note": "Данные за 2025 год. ЭМГ и КМГ Секьюрити отсутствуют — у них другая структура листа."
     },
     "terms": {
       "МРП": "Месячный расчётный показатель (4 325 тенге в 2026 году)",
@@ -11752,6 +11765,3230 @@
       "unit": "пункт",
       "dzo": "МТК",
       "value": 10000
+    }
+  ],
+  "dzo_details": [
+    {
+      "code": "ESP 1",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 8381558.1
+    },
+    {
+      "code": "EP 2",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 2043056.8
+    },
+    {
+      "code": "EP 3",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 2043056.8
+    },
+    {
+      "code": "EP 4",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 2043056.8
+    },
+    {
+      "code": "EP 7",
+      "dzo": "ОМГ",
+      "headcount": 1532,
+      "sum_thousand_tenge": 57437.5
+    },
+    {
+      "code": "EP 8",
+      "dzo": "ОМГ",
+      "headcount": 951,
+      "sum_thousand_tenge": 23550.0
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "ОМГ",
+      "sum_thousand_tenge": 3666621.2
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 3757614.4
+    },
+    {
+      "code": "OPL 8",
+      "dzo": "ОМГ",
+      "sum_thousand_tenge": 379559.3
+    },
+    {
+      "code": "OPL 7",
+      "dzo": "ОМГ",
+      "sum_thousand_tenge": 932.9
+    },
+    {
+      "code": "OiOT 3",
+      "dzo": "ОМГ",
+      "sum_thousand_tenge": 681696.1
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "ОМГ",
+      "sum_thousand_tenge": 8026613.6
+    },
+    {
+      "code": "ESP 5",
+      "dzo": "ОМГ",
+      "headcount": 7309,
+      "sum_thousand_tenge": 431084.8
+    },
+    {
+      "code": "ESP 4",
+      "dzo": "ОМГ",
+      "headcount": 10416,
+      "sum_thousand_tenge": 614335.7
+    },
+    {
+      "code": "EVD 5",
+      "dzo": "ОМГ",
+      "headcount": 35,
+      "sum_thousand_tenge": 13762.0
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "ОМГ",
+      "headcount": 356,
+      "sum_thousand_tenge": 97985.4
+    },
+    {
+      "code": "EVD 1",
+      "dzo": "ОМГ",
+      "headcount": 17,
+      "sum_thousand_tenge": 66844.0
+    },
+    {
+      "code": "EVD 4",
+      "dzo": "ОМГ",
+      "headcount": 21,
+      "sum_thousand_tenge": 20643.0
+    },
+    {
+      "code": "VNI 10",
+      "dzo": "ОМГ",
+      "headcount": 20,
+      "sum_thousand_tenge": 19660.0
+    },
+    {
+      "code": "MP 10.6",
+      "dzo": "ОМГ",
+      "headcount": 295,
+      "sum_thousand_tenge": 57997.0
+    },
+    {
+      "code": "MP 10.6",
+      "dzo": "ОМГ",
+      "headcount": 307,
+      "sum_thousand_tenge": 66391.8
+    },
+    {
+      "code": "MP 10.6",
+      "dzo": "ОМГ",
+      "headcount": 240,
+      "sum_thousand_tenge": 56620.8
+    },
+    {
+      "code": "MP 9",
+      "dzo": "ОМГ",
+      "headcount": 939,
+      "sum_thousand_tenge": 184607.4
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "ОМГ",
+      "headcount": 14110,
+      "sum_thousand_tenge": 1109610.4
+    },
+    {
+      "code": "MP 3",
+      "dzo": "ОМГ",
+      "headcount": 93,
+      "sum_thousand_tenge": 18283.8
+    },
+    {
+      "code": "MP 4.4",
+      "dzo": "ОМГ",
+      "headcount": 812,
+      "sum_thousand_tenge": 191567.0
+    },
+    {
+      "code": "MP 4.5",
+      "dzo": "ОМГ",
+      "headcount": 139,
+      "sum_thousand_tenge": 21861.9
+    },
+    {
+      "code": "EP 1",
+      "dzo": "ОМГ",
+      "headcount": 1755,
+      "sum_thousand_tenge": 253699.4
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ОМГ",
+      "headcount": 191,
+      "sum_thousand_tenge": 354356.9
+    },
+    {
+      "code": "POS 1",
+      "dzo": "ОМГ",
+      "headcount": 1140,
+      "sum_thousand_tenge": 89649.6
+    },
+    {
+      "code": "MP 2",
+      "dzo": "ОМГ",
+      "headcount": 88,
+      "sum_thousand_tenge": 12248.2
+    },
+    {
+      "code": "PEN 23",
+      "dzo": "ОМГ",
+      "headcount": 40,
+      "sum_thousand_tenge": 754944.0
+    },
+    {
+      "code": "HEALTH 3.1",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 1233627.9
+    },
+    {
+      "code": "MP 8",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 6333476.1
+    },
+    {
+      "code": "HEALTH 1.1",
+      "dzo": "ОМГ",
+      "headcount": 17537,
+      "sum_thousand_tenge": 581224.0
+    },
+    {
+      "code": "HEALTH 1.3",
+      "dzo": "ОМГ",
+      "headcount": 1357,
+      "sum_thousand_tenge": 352820.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "ОМГ",
+      "headcount": 5160,
+      "sum_thousand_tenge": 2074247.0
+    },
+    {
+      "code": "EVENTS 1",
+      "dzo": "ОМГ",
+      "sum_thousand_tenge": 115996.0
+    },
+    {
+      "code": "EVENTS 2",
+      "dzo": "ОМГ",
+      "sum_thousand_tenge": 57776.2
+    },
+    {
+      "code": "HEALTH 5.1",
+      "dzo": "ОМГ",
+      "headcount": 65520,
+      "sum_thousand_tenge": 292343.8
+    },
+    {
+      "code": "CH 5.2",
+      "dzo": "ОМГ",
+      "headcount": 26819,
+      "sum_thousand_tenge": 316360.0
+    },
+    {
+      "code": "HEALTH 2.6",
+      "dzo": "ОМГ",
+      "headcount": 1400,
+      "sum_thousand_tenge": 323000.0
+    },
+    {
+      "code": "HEALTH 2.4",
+      "dzo": "ОМГ",
+      "headcount": 2350,
+      "sum_thousand_tenge": 544000.0
+    },
+    {
+      "code": "CH 3.2",
+      "dzo": "ОМГ",
+      "headcount": 3919,
+      "sum_thousand_tenge": 423252.0
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 2133440.4
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 5890960.4
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "ОМГ",
+      "headcount": 10048,
+      "sum_thousand_tenge": 1560639.4
+    },
+    {
+      "code": "PB 2",
+      "dzo": "ОМГ",
+      "headcount": 10492,
+      "sum_thousand_tenge": 36870850.0
+    },
+    {
+      "code": "PEN 16",
+      "dzo": "ОМГ",
+      "headcount": 1900,
+      "sum_thousand_tenge": 32300.0
+    },
+    {
+      "code": "PEN 17.4",
+      "dzo": "ОМГ",
+      "headcount": 1450,
+      "sum_thousand_tenge": 327500.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "ОМГ",
+      "headcount": 650,
+      "sum_thousand_tenge": 16250.0
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "ОМГ",
+      "headcount": 1900,
+      "sum_thousand_tenge": 149416.0
+    },
+    {
+      "code": "PEN 14",
+      "dzo": "ОМГ",
+      "headcount": 25,
+      "sum_thousand_tenge": 625.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "ОМГ",
+      "headcount": 1900,
+      "sum_thousand_tenge": 149416.0
+    },
+    {
+      "code": "PEN 13",
+      "dzo": "ОМГ",
+      "headcount": 1900,
+      "sum_thousand_tenge": 149416.0
+    },
+    {
+      "code": "PEN 8",
+      "dzo": "ОМГ",
+      "headcount": 1900,
+      "sum_thousand_tenge": 149416.0
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "ОМГ",
+      "headcount": 80,
+      "sum_thousand_tenge": 5600.0
+    },
+    {
+      "code": "PEN 1",
+      "dzo": "ОМГ",
+      "headcount": 129,
+      "sum_thousand_tenge": 6450.0
+    },
+    {
+      "code": "PEN 17.1",
+      "dzo": "ОМГ",
+      "headcount": 1900,
+      "sum_thousand_tenge": 133000.0
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 1284373.0
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 1257324.6
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 1346628.3
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 421010.3
+    },
+    {
+      "code": "OPL 7",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 6397.0
+    },
+    {
+      "code": "PB 2",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 13696061.8
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 3122065.0
+    },
+    {
+      "code": "OPL 13",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 233560.8
+    },
+    {
+      "code": "EVD 1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 7864.0
+    },
+    {
+      "code": "VNI 1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 15728.0
+    },
+    {
+      "code": "OiOT 1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 12183.9
+    },
+    {
+      "code": "EVD 5",
+      "dzo": "ММГ",
+      "headcount": 15,
+      "sum_thousand_tenge": 11796.0
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "ММГ",
+      "headcount": 50,
+      "sum_thousand_tenge": 9830.0
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "ММГ",
+      "headcount": 172,
+      "sum_thousand_tenge": 47341.3
+    },
+    {
+      "code": "OTHERS 1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 1800.0
+    },
+    {
+      "code": "EVD 4",
+      "dzo": "ММГ",
+      "headcount": 3,
+      "sum_thousand_tenge": 3538.8
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "ММГ",
+      "headcount": 1897,
+      "sum_thousand_tenge": 597347.1
+    },
+    {
+      "code": "HEALTH 3.7",
+      "dzo": "ММГ",
+      "headcount": 3900,
+      "sum_thousand_tenge": 153348.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 3146237.8
+    },
+    {
+      "code": "HEALTH 2.7",
+      "dzo": "ММГ",
+      "headcount": 2000,
+      "sum_thousand_tenge": 400000.0
+    },
+    {
+      "code": "MP 10.1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 77067.2
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 308793.8
+    },
+    {
+      "code": "EP 1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 50093.7
+    },
+    {
+      "code": "EP 2",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 796082.5
+    },
+    {
+      "code": "EP 3",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 796082.5
+    },
+    {
+      "code": "EP 4",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 796082.5
+    },
+    {
+      "code": "MP 1",
+      "dzo": "ММГ",
+      "headcount": 30,
+      "sum_thousand_tenge": 8257.2
+    },
+    {
+      "code": "MP 9",
+      "dzo": "ММГ",
+      "headcount": 456,
+      "sum_thousand_tenge": 107579.5
+    },
+    {
+      "code": "MP 4.13",
+      "dzo": "ММГ",
+      "headcount": 125,
+      "sum_thousand_tenge": 73135.2
+    },
+    {
+      "code": "POS 1",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 100737.8
+    },
+    {
+      "code": "OTHERS 3",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 60000.0
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "ММГ",
+      "headcount": 4523,
+      "sum_thousand_tenge": 213413.2
+    },
+    {
+      "code": "CH 5.3",
+      "dzo": "ММГ",
+      "headcount": 6682,
+      "sum_thousand_tenge": 78820.9
+    },
+    {
+      "code": "MP 3",
+      "dzo": "ММГ",
+      "headcount": 41,
+      "sum_thousand_tenge": 9672.7
+    },
+    {
+      "code": "MP 4.3",
+      "dzo": "ММГ",
+      "headcount": 8,
+      "sum_thousand_tenge": 1572.8
+    },
+    {
+      "code": "CH 4",
+      "dzo": "ММГ",
+      "headcount": 767,
+      "sum_thousand_tenge": 340904.4
+    },
+    {
+      "code": "CH 3.3",
+      "dzo": "ММГ",
+      "headcount": 437,
+      "sum_thousand_tenge": 57961.5
+    },
+    {
+      "code": "PEN 1",
+      "dzo": "ММГ",
+      "headcount": 94,
+      "sum_thousand_tenge": 18480.4
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "ММГ",
+      "headcount": 1536,
+      "sum_thousand_tenge": 120791.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "ММГ",
+      "headcount": 1536,
+      "sum_thousand_tenge": 120791.0
+    },
+    {
+      "code": "PEN 8",
+      "dzo": "ММГ",
+      "headcount": 1536,
+      "sum_thousand_tenge": 120791.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "ММГ",
+      "headcount": 900,
+      "sum_thousand_tenge": 70776.0
+    },
+    {
+      "code": "PEN 2",
+      "dzo": "ММГ",
+      "headcount": 1536,
+      "sum_thousand_tenge": 289898.5
+    },
+    {
+      "code": "PEN 16",
+      "dzo": "ММГ",
+      "sum_thousand_tenge": 11830.8
+    },
+    {
+      "code": "PEN 17.4",
+      "dzo": "ММГ",
+      "headcount": 140,
+      "sum_thousand_tenge": 21000.0
+    },
+    {
+      "code": "CH 2.4",
+      "dzo": "ММГ",
+      "headcount": 15,
+      "sum_thousand_tenge": 707.8
+    },
+    {
+      "code": "PEN 9",
+      "dzo": "ММГ",
+      "headcount": 5,
+      "sum_thousand_tenge": 56.0
+    },
+    {
+      "code": "CH 1.4",
+      "dzo": "ММГ",
+      "headcount": 3,
+      "sum_thousand_tenge": 566.4
+    },
+    {
+      "code": "PEN 14",
+      "dzo": "ММГ",
+      "headcount": 39,
+      "sum_thousand_tenge": 13801.3
+    },
+    {
+      "code": "PB 2",
+      "dzo": "КБМ",
+      "headcount": 4757,
+      "sum_thousand_tenge": 17445119.0
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "КБМ",
+      "headcount": 4757,
+      "sum_thousand_tenge": 3795136.0
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "КБМ",
+      "headcount": 4419,
+      "sum_thousand_tenge": 421409.0
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "КБМ",
+      "headcount": 4397,
+      "sum_thousand_tenge": 1812100.0
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "КБМ",
+      "headcount": 2486,
+      "sum_thousand_tenge": 3654847.0
+    },
+    {
+      "code": "OPL 5",
+      "dzo": "КБМ",
+      "headcount": 4169,
+      "sum_thousand_tenge": 390770.0
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "КБМ",
+      "headcount": 3811,
+      "sum_thousand_tenge": 533282.0
+    },
+    {
+      "code": "PEN 17.5",
+      "dzo": "КБМ",
+      "headcount": 5266,
+      "sum_thousand_tenge": 575710.0
+    },
+    {
+      "code": "EP 2",
+      "dzo": "КБМ",
+      "headcount": 4772,
+      "sum_thousand_tenge": 945449.3
+    },
+    {
+      "code": "EP 3",
+      "dzo": "КБМ",
+      "headcount": 4772,
+      "sum_thousand_tenge": 945449.3
+    },
+    {
+      "code": "EP 4",
+      "dzo": "КБМ",
+      "headcount": 4772,
+      "sum_thousand_tenge": 945449.3
+    },
+    {
+      "code": "OPL 9",
+      "dzo": "КБМ",
+      "headcount": 1882,
+      "sum_thousand_tenge": 105322.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "КБМ",
+      "headcount": 4772,
+      "sum_thousand_tenge": 1876350.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "КБМ",
+      "headcount": 336,
+      "sum_thousand_tenge": 33029.0
+    },
+    {
+      "code": "POS 1",
+      "dzo": "КБМ",
+      "headcount": 420,
+      "sum_thousand_tenge": 32567.0
+    },
+    {
+      "code": "HEALTH 3.7",
+      "dzo": "КБМ",
+      "headcount": 1290,
+      "sum_thousand_tenge": 150040.0
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "КБМ",
+      "headcount": 308,
+      "sum_thousand_tenge": 84674.0
+    },
+    {
+      "code": "OTHERS 1",
+      "dzo": "КБМ",
+      "headcount": 22,
+      "sum_thousand_tenge": 1706.0
+    },
+    {
+      "code": "MP 10.2",
+      "dzo": "КБМ",
+      "headcount": 245,
+      "sum_thousand_tenge": 144224.0
+    },
+    {
+      "code": "MP 1",
+      "dzo": "КБМ",
+      "headcount": 43,
+      "sum_thousand_tenge": 8529.0
+    },
+    {
+      "code": "MP 9",
+      "dzo": "КБМ",
+      "headcount": 528,
+      "sum_thousand_tenge": 103710.0
+    },
+    {
+      "code": "CH 6.1",
+      "dzo": "КБМ",
+      "headcount": 510,
+      "sum_thousand_tenge": 320255.8
+    },
+    {
+      "code": "CH 7",
+      "dzo": "КБМ",
+      "headcount": 351,
+      "sum_thousand_tenge": 77999.9
+    },
+    {
+      "code": "HEALTH 5.2",
+      "dzo": "КБМ",
+      "headcount": 1380,
+      "sum_thousand_tenge": 13800.0
+    },
+    {
+      "code": "OTHERS 8",
+      "dzo": "КБМ",
+      "headcount": 195,
+      "sum_thousand_tenge": 69202.0
+    },
+    {
+      "code": "MP 4.8",
+      "dzo": "КБМ",
+      "headcount": 191,
+      "sum_thousand_tenge": 92563.0
+    },
+    {
+      "code": "MP 4.4",
+      "dzo": "КБМ",
+      "headcount": 64,
+      "sum_thousand_tenge": 12600.0
+    },
+    {
+      "code": "MP 3",
+      "dzo": "КБМ",
+      "headcount": 54,
+      "sum_thousand_tenge": 6397.0
+    },
+    {
+      "code": "HEALTH 2.2",
+      "dzo": "КБМ",
+      "headcount": 700,
+      "sum_thousand_tenge": 135000.0
+    },
+    {
+      "code": "VOZ 2",
+      "dzo": "КБМ",
+      "headcount": 150,
+      "sum_thousand_tenge": 27000.0
+    },
+    {
+      "code": "PEN 17.3",
+      "dzo": "КБМ",
+      "headcount": 110,
+      "sum_thousand_tenge": 16538.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "КБМ",
+      "headcount": 2394,
+      "sum_thousand_tenge": 912926.0
+    },
+    {
+      "code": "CH 5.3",
+      "dzo": "КБМ",
+      "headcount": 9250,
+      "sum_thousand_tenge": 107587.0
+    },
+    {
+      "code": "CH 3.3",
+      "dzo": "КБМ",
+      "headcount": 882,
+      "sum_thousand_tenge": 99730.0
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "КБМ",
+      "headcount": 6593,
+      "sum_thousand_tenge": 255611.0
+    },
+    {
+      "code": "PEN 24",
+      "dzo": "КБМ",
+      "headcount": 899,
+      "sum_thousand_tenge": 176791.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "КБМ",
+      "headcount": 109,
+      "sum_thousand_tenge": 8452.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "КБМ",
+      "headcount": 893,
+      "sum_thousand_tenge": 69243.2
+    },
+    {
+      "code": "PEN 8",
+      "dzo": "КБМ",
+      "headcount": 893,
+      "sum_thousand_tenge": 69243.2
+    },
+    {
+      "code": "PEN 9",
+      "dzo": "КБМ",
+      "headcount": 893,
+      "sum_thousand_tenge": 69243.2
+    },
+    {
+      "code": "PEN 14",
+      "dzo": "КБМ",
+      "headcount": 893,
+      "sum_thousand_tenge": 69243.2
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "КБМ",
+      "headcount": 893,
+      "sum_thousand_tenge": 69243.2
+    },
+    {
+      "code": "PEN 11",
+      "dzo": "КБМ",
+      "headcount": 893,
+      "sum_thousand_tenge": 69243.2
+    },
+    {
+      "code": "PEN 10",
+      "dzo": "КБМ",
+      "headcount": 893,
+      "sum_thousand_tenge": 69243.2
+    },
+    {
+      "code": "EVD 5",
+      "dzo": "КБМ",
+      "headcount": 308,
+      "sum_thousand_tenge": 84674.0
+    },
+    {
+      "code": "PEN 27",
+      "dzo": "КБМ",
+      "headcount": 159,
+      "sum_thousand_tenge": 8876.0
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "КБМ",
+      "headcount": 912,
+      "sum_thousand_tenge": 176791.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 1330982.0
+    },
+    {
+      "code": "EP 2",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 532589.4
+    },
+    {
+      "code": "EP 3",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 532589.4
+    },
+    {
+      "code": "EP 4",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 532589.4
+    },
+    {
+      "code": "EP 12",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 532589.4
+    },
+    {
+      "code": "EP 11",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 532589.4
+    },
+    {
+      "code": "ESP 6",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 1714557.0
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "ОСК",
+      "headcount": 2606,
+      "sum_thousand_tenge": 708152.0
+    },
+    {
+      "code": "EVD 5",
+      "dzo": "ОСК",
+      "headcount": 10,
+      "sum_thousand_tenge": 4915.0
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "ОСК",
+      "headcount": 6,
+      "sum_thousand_tenge": 1180.0
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "ОСК",
+      "headcount": 72,
+      "sum_thousand_tenge": 18402.0
+    },
+    {
+      "code": "MP 10.3",
+      "dzo": "ОСК",
+      "headcount": 8,
+      "sum_thousand_tenge": 2045.0
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "ОСК",
+      "headcount": 74,
+      "sum_thousand_tenge": 18913.0
+    },
+    {
+      "code": "MP 9",
+      "dzo": "ОСК",
+      "headcount": 296,
+      "sum_thousand_tenge": 75652.0
+    },
+    {
+      "code": "MP 1",
+      "dzo": "ОСК",
+      "headcount": 11,
+      "sum_thousand_tenge": 1946.0
+    },
+    {
+      "code": "MP 4.5",
+      "dzo": "ОСК",
+      "headcount": 148,
+      "sum_thousand_tenge": 37826.0
+    },
+    {
+      "code": "MP 4.4",
+      "dzo": "ОСК",
+      "headcount": 1,
+      "sum_thousand_tenge": 256.0
+    },
+    {
+      "code": "CH 6.2",
+      "dzo": "ОСК",
+      "sum_thousand_tenge": 20000.0
+    },
+    {
+      "code": "OTHERS 3",
+      "dzo": "ОСК",
+      "sum_thousand_tenge": 20000.0
+    },
+    {
+      "code": "VOZ 1",
+      "dzo": "ОСК",
+      "headcount": 2,
+      "sum_thousand_tenge": 786.0
+    },
+    {
+      "code": "HEALTH 2.5",
+      "dzo": "ОСК",
+      "headcount": 1052,
+      "sum_thousand_tenge": 73640.0
+    },
+    {
+      "code": "PEN 3",
+      "dzo": "ОСК",
+      "headcount": 7,
+      "sum_thousand_tenge": 550.0
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ОСК",
+      "headcount": 35,
+      "sum_thousand_tenge": 92137.0
+    },
+    {
+      "code": "POS 1",
+      "dzo": "ОСК",
+      "headcount": 5,
+      "sum_thousand_tenge": 4718.0
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "ОСК",
+      "headcount": 4521,
+      "sum_thousand_tenge": 177766.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "ОСК",
+      "headcount": 558,
+      "sum_thousand_tenge": 43881.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "ОСК",
+      "headcount": 74,
+      "sum_thousand_tenge": 5819.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "ОСК",
+      "headcount": 65,
+      "sum_thousand_tenge": 5111.0
+    },
+    {
+      "code": "MP 3",
+      "dzo": "ОСК",
+      "headcount": 26,
+      "sum_thousand_tenge": 3578.0
+    },
+    {
+      "code": "HEALTH 3.1",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 232604.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "ОСК",
+      "headcount": 1623,
+      "sum_thousand_tenge": 616740.0
+    },
+    {
+      "code": "CH 5.1",
+      "dzo": "ОСК",
+      "headcount": 4500,
+      "sum_thousand_tenge": 53082.0
+    },
+    {
+      "code": "EVENTS 1",
+      "dzo": "ОСК",
+      "sum_thousand_tenge": 50352.0
+    },
+    {
+      "code": "CH 3.1",
+      "dzo": "ОСК",
+      "headcount": 16,
+      "sum_thousand_tenge": 7680.0
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "ОСК",
+      "headcount": 2495,
+      "sum_thousand_tenge": 685522.9
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "ОСК",
+      "headcount": 2495,
+      "sum_thousand_tenge": 1044606.3
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "ОСК",
+      "headcount": 1887,
+      "sum_thousand_tenge": 2932357.3
+    },
+    {
+      "code": "OPL 5",
+      "dzo": "ОСК",
+      "headcount": 37,
+      "sum_thousand_tenge": 103344.0
+    },
+    {
+      "code": "OPL 6",
+      "dzo": "ОСК",
+      "headcount": 18,
+      "sum_thousand_tenge": 8304.4
+    },
+    {
+      "code": "OPL 9",
+      "dzo": "ОСК",
+      "headcount": 63,
+      "sum_thousand_tenge": 118497.2
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "ОСК",
+      "headcount": 2380,
+      "sum_thousand_tenge": 465880.7
+    },
+    {
+      "code": "PB 2",
+      "dzo": "ОСК",
+      "headcount": 2606,
+      "sum_thousand_tenge": 11376689.7
+    },
+    {
+      "code": "PB 1",
+      "dzo": "ОСК",
+      "headcount": 97,
+      "sum_thousand_tenge": 389605.9
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "ОСК",
+      "headcount": 2709,
+      "sum_thousand_tenge": 2213779.6
+    },
+    {
+      "code": "PB 1",
+      "dzo": "ОТК",
+      "headcount": 26,
+      "sum_thousand_tenge": 89251.1
+    },
+    {
+      "code": "PB 2",
+      "dzo": "ОТК",
+      "headcount": 167,
+      "sum_thousand_tenge": 588909.6
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "ОТК",
+      "headcount": 193,
+      "sum_thousand_tenge": 112062.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "ОТК",
+      "headcount": 193,
+      "sum_thousand_tenge": 93385.0
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "ОТК",
+      "headcount": 137,
+      "sum_thousand_tenge": 20268.9
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "ОТК",
+      "headcount": 165,
+      "sum_thousand_tenge": 24573.0
+    },
+    {
+      "code": "OiOT 3",
+      "dzo": "ОТК",
+      "sum_thousand_tenge": 3467.0
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "ОТК",
+      "headcount": 9,
+      "sum_thousand_tenge": 2300.0
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "ОТК",
+      "headcount": 7,
+      "sum_thousand_tenge": 1376.0
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "ОТК",
+      "headcount": 5,
+      "sum_thousand_tenge": 1278.0
+    },
+    {
+      "code": "MP 9",
+      "dzo": "ОТК",
+      "headcount": 18,
+      "sum_thousand_tenge": 4600.0
+    },
+    {
+      "code": "MP 1",
+      "dzo": "ОТК",
+      "headcount": 6,
+      "sum_thousand_tenge": 1062.0
+    },
+    {
+      "code": "MP 4.13",
+      "dzo": "ОТК",
+      "headcount": 11,
+      "sum_thousand_tenge": 2811.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "ОТК",
+      "headcount": 59,
+      "sum_thousand_tenge": 4640.0
+    },
+    {
+      "code": "EP 2",
+      "dzo": "ОТК",
+      "headcount": 190,
+      "sum_thousand_tenge": 37354.0
+    },
+    {
+      "code": "EP 3",
+      "dzo": "ОТК",
+      "headcount": 190,
+      "sum_thousand_tenge": 37354.0
+    },
+    {
+      "code": "EP 4",
+      "dzo": "ОТК",
+      "headcount": 190,
+      "sum_thousand_tenge": 37354.0
+    },
+    {
+      "code": "POS 1",
+      "dzo": "ОТК",
+      "headcount": 2,
+      "sum_thousand_tenge": 944.0
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "ОТК",
+      "headcount": 265,
+      "sum_thousand_tenge": 10420.0
+    },
+    {
+      "code": "CH 5.1",
+      "dzo": "ОТК",
+      "headcount": 265,
+      "sum_thousand_tenge": 3126.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "ОТК",
+      "headcount": 120,
+      "sum_thousand_tenge": 45600.0
+    },
+    {
+      "code": "HEALTH 3.1",
+      "dzo": "ОТК",
+      "headcount": 190,
+      "sum_thousand_tenge": 9500.0
+    },
+    {
+      "code": "CH 6.2",
+      "dzo": "ОТК",
+      "headcount": 25,
+      "sum_thousand_tenge": 8291.0
+    },
+    {
+      "code": "OTHERS 3",
+      "dzo": "ОТК",
+      "sum_thousand_tenge": 45409.0
+    },
+    {
+      "code": "CH 4",
+      "dzo": "ОТК",
+      "headcount": 56,
+      "sum_thousand_tenge": 11009.0
+    },
+    {
+      "code": "VOZ 1",
+      "dzo": "ОТК",
+      "headcount": 70,
+      "sum_thousand_tenge": 27524.0
+    },
+    {
+      "code": "CH 3.3",
+      "dzo": "ОТК",
+      "headcount": 75,
+      "sum_thousand_tenge": 18000.0
+    },
+    {
+      "code": "CH 5.4",
+      "dzo": "ОТК",
+      "headcount": 265,
+      "sum_thousand_tenge": 1325.0
+    },
+    {
+      "code": "VNI 11",
+      "dzo": "ОТК",
+      "headcount": 7,
+      "sum_thousand_tenge": 1400.0
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "ОТК",
+      "headcount": 137,
+      "sum_thousand_tenge": 11772.0
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "ОТК",
+      "headcount": 167,
+      "sum_thousand_tenge": 362811.1
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "ОТК",
+      "headcount": 167,
+      "sum_thousand_tenge": 80569.1
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "ОТК",
+      "headcount": 120,
+      "sum_thousand_tenge": 45600.0
+    },
+    {
+      "code": "CH 6.3",
+      "dzo": "ОТК",
+      "headcount": 25,
+      "sum_thousand_tenge": 8291.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "ОТК",
+      "headcount": 59,
+      "sum_thousand_tenge": 4640.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "ОТК",
+      "headcount": 443,
+      "sum_thousand_tenge": 34838.0
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "ОКК",
+      "headcount": 472,
+      "sum_thousand_tenge": 408201.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "ОКК",
+      "headcount": 472,
+      "sum_thousand_tenge": 231989.0
+    },
+    {
+      "code": "OPL 5",
+      "dzo": "ОКК",
+      "headcount": 17,
+      "sum_thousand_tenge": 36461.0
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "ОКК",
+      "headcount": 402,
+      "sum_thousand_tenge": 93399.0
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "ОКК",
+      "headcount": 402,
+      "sum_thousand_tenge": 152023.0
+    },
+    {
+      "code": "OPL 8",
+      "dzo": "ОКК",
+      "headcount": 126,
+      "sum_thousand_tenge": 102525.0
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "ОКК",
+      "headcount": 330,
+      "sum_thousand_tenge": 43846.0
+    },
+    {
+      "code": "EVD 1",
+      "dzo": "ОКК",
+      "headcount": 1,
+      "sum_thousand_tenge": 393.2
+    },
+    {
+      "code": "EVD 5",
+      "dzo": "ОКК",
+      "headcount": 1,
+      "sum_thousand_tenge": 491.5
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "ОКК",
+      "headcount": 5,
+      "sum_thousand_tenge": 983.0
+    },
+    {
+      "code": "MP 10.3",
+      "dzo": "ОКК",
+      "headcount": 2,
+      "sum_thousand_tenge": 511.2
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "ОКК",
+      "headcount": 17,
+      "sum_thousand_tenge": 4344.9
+    },
+    {
+      "code": "MP 9",
+      "dzo": "ОКК",
+      "headcount": 48,
+      "sum_thousand_tenge": 12267.8
+    },
+    {
+      "code": "MP 1",
+      "dzo": "ОКК",
+      "headcount": 11,
+      "sum_thousand_tenge": 1946.3
+    },
+    {
+      "code": "MP 4.5",
+      "dzo": "ОКК",
+      "headcount": 24,
+      "sum_thousand_tenge": 6133.9
+    },
+    {
+      "code": "EP 1",
+      "dzo": "ОКК",
+      "headcount": 35,
+      "sum_thousand_tenge": 2752.4
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "ОКК",
+      "headcount": 60,
+      "sum_thousand_tenge": 4718.4
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 9734.5
+    },
+    {
+      "code": "EP 2",
+      "dzo": "ОКК",
+      "headcount": 472,
+      "sum_thousand_tenge": 92795.2
+    },
+    {
+      "code": "EP 3",
+      "dzo": "ОКК",
+      "headcount": 472,
+      "sum_thousand_tenge": 92795.2
+    },
+    {
+      "code": "EP 4",
+      "dzo": "ОКК",
+      "headcount": 472,
+      "sum_thousand_tenge": 92795.2
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "ОКК",
+      "headcount": 330,
+      "sum_thousand_tenge": 25951.2
+    },
+    {
+      "code": "POS 1",
+      "dzo": "ОКК",
+      "headcount": 2,
+      "sum_thousand_tenge": 1258.2
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "ОКК",
+      "headcount": 665,
+      "sum_thousand_tenge": 26147.8
+    },
+    {
+      "code": "CH 5.1",
+      "dzo": "ОКК",
+      "headcount": 678,
+      "sum_thousand_tenge": 7997.7
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "ОКК",
+      "headcount": 381,
+      "sum_thousand_tenge": 143351.2
+    },
+    {
+      "code": "EVENTS 1",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 25909.3
+    },
+    {
+      "code": "OTHERS 8",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 7250.0
+    },
+    {
+      "code": "HEALTH 3.1",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 45412.5
+    },
+    {
+      "code": "CH 6.4",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 19266.8
+    },
+    {
+      "code": "PB 2",
+      "dzo": "ОКК",
+      "headcount": 472,
+      "sum_thousand_tenge": 1465271.0
+    },
+    {
+      "code": "PEN 3",
+      "dzo": "ОКК",
+      "headcount": 70,
+      "sum_thousand_tenge": 5504.8
+    },
+    {
+      "code": "EP 8",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 240.0
+    },
+    {
+      "code": "EP 10",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 1370.0
+    },
+    {
+      "code": "EP 10",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 410.0
+    },
+    {
+      "code": "MP 3",
+      "dzo": "ОКК",
+      "headcount": 2,
+      "sum_thousand_tenge": 157.3
+    },
+    {
+      "code": "EVD 1",
+      "dzo": "ОКК",
+      "headcount": 1,
+      "sum_thousand_tenge": 3932.0
+    },
+    {
+      "code": "VOZ 1",
+      "dzo": "ОКК",
+      "headcount": 3,
+      "sum_thousand_tenge": 1179.6
+    },
+    {
+      "code": "MP 12",
+      "dzo": "ОКК",
+      "sum_thousand_tenge": 4896.4
+    },
+    {
+      "code": "EP 2",
+      "dzo": "МЭМ",
+      "headcount": 427,
+      "sum_thousand_tenge": 83948.2
+    },
+    {
+      "code": "EP 3",
+      "dzo": "МЭМ",
+      "headcount": 427,
+      "sum_thousand_tenge": 83948.2
+    },
+    {
+      "code": "EP 4",
+      "dzo": "МЭМ",
+      "headcount": 427,
+      "sum_thousand_tenge": 83948.2
+    },
+    {
+      "code": "EP 6",
+      "dzo": "МЭМ",
+      "headcount": 427,
+      "sum_thousand_tenge": 83948.2
+    },
+    {
+      "code": "MP 8",
+      "dzo": "МЭМ",
+      "headcount": 427,
+      "sum_thousand_tenge": 209870.5
+    },
+    {
+      "code": "MP 10.3",
+      "dzo": "МЭМ",
+      "headcount": 1,
+      "sum_thousand_tenge": 255.6
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "МЭМ",
+      "headcount": 17,
+      "sum_thousand_tenge": 4344.9
+    },
+    {
+      "code": "MP 1",
+      "dzo": "МЭМ",
+      "headcount": 4,
+      "sum_thousand_tenge": 707.8
+    },
+    {
+      "code": "EP 1",
+      "dzo": "МЭМ",
+      "headcount": 26,
+      "sum_thousand_tenge": 2044.6
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "МЭМ",
+      "headcount": 17,
+      "sum_thousand_tenge": 1336.9
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "МЭМ",
+      "headcount": 7,
+      "sum_thousand_tenge": 17771.3
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "МЭМ",
+      "headcount": 125,
+      "sum_thousand_tenge": 9830.0
+    },
+    {
+      "code": "CH 5.1",
+      "dzo": "МЭМ",
+      "headcount": 850,
+      "sum_thousand_tenge": 10026.6
+    },
+    {
+      "code": "MP 9",
+      "dzo": "МЭМ",
+      "headcount": 40,
+      "sum_thousand_tenge": 10223.2
+    },
+    {
+      "code": "EVD 5",
+      "dzo": "МЭМ",
+      "headcount": 5,
+      "sum_thousand_tenge": 2457.5
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "МЭМ",
+      "headcount": 7,
+      "sum_thousand_tenge": 1376.2
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "МЭМ",
+      "headcount": 40,
+      "sum_thousand_tenge": 10223.2
+    },
+    {
+      "code": "MP 4.5",
+      "dzo": "МЭМ",
+      "headcount": 22,
+      "sum_thousand_tenge": 5622.8
+    },
+    {
+      "code": "POS 1",
+      "dzo": "МЭМ",
+      "headcount": 2,
+      "sum_thousand_tenge": 1887.4
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "МЭМ",
+      "headcount": 550,
+      "sum_thousand_tenge": 21626.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "МЭМ",
+      "headcount": 180,
+      "sum_thousand_tenge": 66780.0
+    },
+    {
+      "code": "CH 6.2",
+      "dzo": "МЭМ",
+      "headcount": 50,
+      "sum_thousand_tenge": 4250.0
+    },
+    {
+      "code": "HEALTH 3.2",
+      "dzo": "МЭМ",
+      "headcount": 427,
+      "sum_thousand_tenge": 21350.0
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "МЭМ",
+      "headcount": 427,
+      "sum_thousand_tenge": 391476.3
+    },
+    {
+      "code": "OTHERS 3",
+      "dzo": "МЭМ",
+      "headcount": 15,
+      "sum_thousand_tenge": 1800.0
+    },
+    {
+      "code": "MP 12",
+      "dzo": "МЭМ",
+      "headcount": 2,
+      "sum_thousand_tenge": 7041.6
+    },
+    {
+      "code": "PEN 21",
+      "dzo": "МЭМ",
+      "headcount": 2,
+      "sum_thousand_tenge": 41469.2
+    },
+    {
+      "code": "EP 6",
+      "dzo": "МЭМ",
+      "headcount": 65,
+      "sum_thousand_tenge": 3250.0
+    },
+    {
+      "code": "EP 2",
+      "dzo": "МТК",
+      "headcount": 98,
+      "sum_thousand_tenge": 19266.8
+    },
+    {
+      "code": "EP 3",
+      "dzo": "МТК",
+      "headcount": 98,
+      "sum_thousand_tenge": 19266.8
+    },
+    {
+      "code": "EP 4",
+      "dzo": "МТК",
+      "headcount": 98,
+      "sum_thousand_tenge": 19266.8
+    },
+    {
+      "code": "MP 8",
+      "dzo": "МТК",
+      "headcount": 98,
+      "sum_thousand_tenge": 48167.0
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "МТК",
+      "headcount": 4,
+      "sum_thousand_tenge": 1030.0
+    },
+    {
+      "code": "MP 1",
+      "dzo": "МТК",
+      "headcount": 5,
+      "sum_thousand_tenge": 885.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "МТК",
+      "headcount": 21,
+      "sum_thousand_tenge": 1651.4
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "МТК",
+      "headcount": 39,
+      "sum_thousand_tenge": 3067.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "МТК",
+      "headcount": 250,
+      "sum_thousand_tenge": 2750.0
+    },
+    {
+      "code": "CH 5.1",
+      "dzo": "МТК",
+      "headcount": 250,
+      "sum_thousand_tenge": 2750.0
+    },
+    {
+      "code": "MP 9",
+      "dzo": "МТК",
+      "headcount": 8,
+      "sum_thousand_tenge": 2044.6
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "МТК",
+      "headcount": 3,
+      "sum_thousand_tenge": 767.0
+    },
+    {
+      "code": "EVD 3",
+      "dzo": "МТК",
+      "headcount": 6,
+      "sum_thousand_tenge": 1533.5
+    },
+    {
+      "code": "MP 4.13",
+      "dzo": "МТК",
+      "headcount": 5,
+      "sum_thousand_tenge": 1277.9
+    },
+    {
+      "code": "POS 1",
+      "dzo": "МТК",
+      "headcount": 8,
+      "sum_thousand_tenge": 7549.4
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "МТК",
+      "headcount": 110,
+      "sum_thousand_tenge": 4325.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "МТК",
+      "headcount": 64,
+      "sum_thousand_tenge": 24320.0
+    },
+    {
+      "code": "CH 6.4",
+      "dzo": "МТК",
+      "headcount": 25,
+      "sum_thousand_tenge": 10000.0
+    },
+    {
+      "code": "OTHERS 8",
+      "dzo": "МТК",
+      "sum_thousand_tenge": 10000.0
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "МТК",
+      "headcount": 44,
+      "sum_thousand_tenge": 14181.1
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "МТК",
+      "headcount": 44,
+      "sum_thousand_tenge": 15042.8
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "МТК",
+      "headcount": 29,
+      "sum_thousand_tenge": 48268.3
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "МТК",
+      "headcount": 36,
+      "sum_thousand_tenge": 3397.2
+    },
+    {
+      "code": "PB 2",
+      "dzo": "МТК",
+      "headcount": 77,
+      "sum_thousand_tenge": 299981.0
+    },
+    {
+      "code": "PB 1",
+      "dzo": "МТК",
+      "headcount": 21,
+      "sum_thousand_tenge": 73152.0
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "МТК",
+      "headcount": 98,
+      "sum_thousand_tenge": 126545.0
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "ОМС",
+      "headcount": 1379,
+      "sum_thousand_tenge": 1194921.7
+    },
+    {
+      "code": "EP 2",
+      "dzo": "ОМС",
+      "headcount": 1379,
+      "sum_thousand_tenge": 271111.4
+    },
+    {
+      "code": "EP 3",
+      "dzo": "ОМС",
+      "headcount": 1379,
+      "sum_thousand_tenge": 271111.4
+    },
+    {
+      "code": "EP 4",
+      "dzo": "ОМС",
+      "headcount": 1379,
+      "sum_thousand_tenge": 271111.4
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "ОМС",
+      "headcount": 1098,
+      "sum_thousand_tenge": 275533.4
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "ОМС",
+      "headcount": 1098,
+      "sum_thousand_tenge": 448477.6
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "ОМС",
+      "headcount": 1064,
+      "sum_thousand_tenge": 1659513.6
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "ОМС",
+      "headcount": 1379,
+      "sum_thousand_tenge": 242020.1
+    },
+    {
+      "code": "EP 7",
+      "dzo": "ОМС",
+      "headcount": 40,
+      "sum_thousand_tenge": 2359.2
+    },
+    {
+      "code": "EP 8",
+      "dzo": "ОМС",
+      "headcount": 145,
+      "sum_thousand_tenge": 5701.4
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "ОМС",
+      "headcount": 214,
+      "sum_thousand_tenge": 125629.2
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "ОМС",
+      "headcount": 211,
+      "sum_thousand_tenge": 42280.0
+    },
+    {
+      "code": "OiOT 4",
+      "dzo": "ОМС",
+      "headcount": 1167,
+      "sum_thousand_tenge": 19016.0
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "ОМС",
+      "headcount": 945,
+      "sum_thousand_tenge": 1403013.0
+    },
+    {
+      "code": "EVD 5",
+      "dzo": "ОМС",
+      "headcount": 8,
+      "sum_thousand_tenge": 3932.0
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "ОМС",
+      "headcount": 37,
+      "sum_thousand_tenge": 9456.0
+    },
+    {
+      "code": "EVD 1",
+      "dzo": "ОМС",
+      "headcount": 2,
+      "sum_thousand_tenge": 9637.0
+    },
+    {
+      "code": "EVD 8",
+      "dzo": "ОМС",
+      "headcount": 5,
+      "sum_thousand_tenge": 35000.0
+    },
+    {
+      "code": "EVD 4",
+      "dzo": "ОМС",
+      "headcount": 1,
+      "sum_thousand_tenge": 865.0
+    },
+    {
+      "code": "VNI 10",
+      "dzo": "ОМС",
+      "headcount": 4,
+      "sum_thousand_tenge": 3146.0
+    },
+    {
+      "code": "MP 10.5",
+      "dzo": "ОМС",
+      "headcount": 31,
+      "sum_thousand_tenge": 6095.0
+    },
+    {
+      "code": "MP 9",
+      "dzo": "ОМС",
+      "headcount": 227,
+      "sum_thousand_tenge": 44628.0
+    },
+    {
+      "code": "MP 3",
+      "dzo": "ОМС",
+      "headcount": 7,
+      "sum_thousand_tenge": 1376.0
+    },
+    {
+      "code": "MP 4.6",
+      "dzo": "ОМС",
+      "headcount": 75,
+      "sum_thousand_tenge": 19169.0
+    },
+    {
+      "code": "MP 4.7",
+      "dzo": "ОМС",
+      "headcount": 23,
+      "sum_thousand_tenge": 3617.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "ОМС",
+      "headcount": 58,
+      "sum_thousand_tenge": 4561.0
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "ОМС",
+      "headcount": 2570,
+      "sum_thousand_tenge": 202105.0
+    },
+    {
+      "code": "POS 1",
+      "dzo": "ОМС",
+      "headcount": 13,
+      "sum_thousand_tenge": 21469.0
+    },
+    {
+      "code": "HEALTH 3.1",
+      "dzo": "ОМС",
+      "headcount": 1380,
+      "sum_thousand_tenge": 131652.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "ОМС",
+      "headcount": 1379,
+      "sum_thousand_tenge": 846165.4
+    },
+    {
+      "code": "HEALTH 1.1",
+      "dzo": "ОМС",
+      "headcount": 390,
+      "sum_thousand_tenge": 33257.0
+    },
+    {
+      "code": "HEALTH 2.4",
+      "dzo": "ОМС",
+      "headcount": 550,
+      "sum_thousand_tenge": 180989.0
+    },
+    {
+      "code": "HEALTH 1.2",
+      "dzo": "ОМС",
+      "headcount": 250,
+      "sum_thousand_tenge": 65000.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "ОМС",
+      "headcount": 1107,
+      "sum_thousand_tenge": 471503.0
+    },
+    {
+      "code": "EVENTS 1",
+      "dzo": "ОМС",
+      "sum_thousand_tenge": 21328.0
+    },
+    {
+      "code": "EVENTS 2",
+      "dzo": "ОМС",
+      "sum_thousand_tenge": 24553.0
+    },
+    {
+      "code": "HEALTH 5.1",
+      "dzo": "ОМС",
+      "sum_thousand_tenge": 166115.0
+    },
+    {
+      "code": "VNI 4",
+      "dzo": "ОМС",
+      "headcount": 6,
+      "sum_thousand_tenge": 1651.0
+    },
+    {
+      "code": "ESP 4",
+      "dzo": "ОМС",
+      "headcount": 835,
+      "sum_thousand_tenge": 49248.0
+    },
+    {
+      "code": "PEN 22",
+      "dzo": "ОМС",
+      "headcount": 3,
+      "sum_thousand_tenge": 66030.8
+    },
+    {
+      "code": "OTHERS 2",
+      "dzo": "ОМС",
+      "headcount": 15,
+      "sum_thousand_tenge": 105000.0
+    },
+    {
+      "code": "MP 1",
+      "dzo": "ОМС",
+      "headcount": 11,
+      "sum_thousand_tenge": 1946.0
+    },
+    {
+      "code": "CH 8",
+      "dzo": "ОМС",
+      "headcount": 5,
+      "sum_thousand_tenge": 1966.0
+    },
+    {
+      "code": "ESP 5",
+      "dzo": "ОМС",
+      "headcount": 1380,
+      "sum_thousand_tenge": 54262.0
+    },
+    {
+      "code": "VNI 3",
+      "dzo": "ОМС",
+      "headcount": 2,
+      "sum_thousand_tenge": 2000.0
+    },
+    {
+      "code": "PEN 16",
+      "dzo": "ОМС",
+      "headcount": 127,
+      "sum_thousand_tenge": 1087.0
+    },
+    {
+      "code": "PEN 17.4",
+      "dzo": "ОМС",
+      "headcount": 123,
+      "sum_thousand_tenge": 18450.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "ОМС",
+      "headcount": 18,
+      "sum_thousand_tenge": 1573.0
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "ОМС",
+      "headcount": 127,
+      "sum_thousand_tenge": 11097.0
+    },
+    {
+      "code": "PEN 14",
+      "dzo": "ОМС",
+      "headcount": 1,
+      "sum_thousand_tenge": 35.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "ОМС",
+      "headcount": 127,
+      "sum_thousand_tenge": 11097.0
+    },
+    {
+      "code": "PEN 13",
+      "dzo": "ОМС",
+      "headcount": 127,
+      "sum_thousand_tenge": 11097.0
+    },
+    {
+      "code": "PEN 8",
+      "dzo": "ОМС",
+      "headcount": 127,
+      "sum_thousand_tenge": 11097.0
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "ОМС",
+      "headcount": 9,
+      "sum_thousand_tenge": 1966.0
+    },
+    {
+      "code": "PEN 1",
+      "dzo": "ОМС",
+      "headcount": 10,
+      "sum_thousand_tenge": 1092.0
+    },
+    {
+      "code": "PEN 17.1",
+      "dzo": "ОМС",
+      "headcount": 48,
+      "sum_thousand_tenge": 2400.0
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "ККС",
+      "headcount": 357,
+      "sum_thousand_tenge": 260627.4
+    },
+    {
+      "code": "EP 2",
+      "dzo": "ККС",
+      "headcount": 357,
+      "sum_thousand_tenge": 70186.2
+    },
+    {
+      "code": "EP 5",
+      "dzo": "ККС",
+      "headcount": 357,
+      "sum_thousand_tenge": 70186.2
+    },
+    {
+      "code": "EP 4",
+      "dzo": "ККС",
+      "headcount": 357,
+      "sum_thousand_tenge": 70186.2
+    },
+    {
+      "code": "EP 1",
+      "dzo": "ККС",
+      "headcount": 70,
+      "sum_thousand_tenge": 5504.8
+    },
+    {
+      "code": "OPL 9",
+      "dzo": "ККС",
+      "headcount": 1,
+      "sum_thousand_tenge": 1500.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "ККС",
+      "headcount": 357,
+      "sum_thousand_tenge": 105279.3
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "ККС",
+      "headcount": 34,
+      "sum_thousand_tenge": 4878.7
+    },
+    {
+      "code": "OPL 8",
+      "dzo": "ККС",
+      "headcount": 32,
+      "sum_thousand_tenge": 18666.5
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "ККС",
+      "headcount": 2396,
+      "sum_thousand_tenge": 12711.5
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "ККС",
+      "headcount": 4044,
+      "sum_thousand_tenge": 29652.8
+    },
+    {
+      "code": "OiOT 3",
+      "dzo": "ККС",
+      "headcount": 5642,
+      "sum_thousand_tenge": 4371.2
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "ККС",
+      "headcount": 6,
+      "sum_thousand_tenge": 1180.0
+    },
+    {
+      "code": "MP 10.3",
+      "dzo": "ККС",
+      "headcount": 3,
+      "sum_thousand_tenge": 658.0
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "ККС",
+      "headcount": 4,
+      "sum_thousand_tenge": 1050.0
+    },
+    {
+      "code": "MP 9",
+      "dzo": "ККС",
+      "headcount": 5,
+      "sum_thousand_tenge": 983.0
+    },
+    {
+      "code": "MP 3",
+      "dzo": "ККС",
+      "headcount": 1,
+      "sum_thousand_tenge": 240.9
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ККС",
+      "headcount": 1,
+      "sum_thousand_tenge": 300.5
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ККС",
+      "headcount": 4,
+      "sum_thousand_tenge": 5036.2
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ККС",
+      "headcount": 5,
+      "sum_thousand_tenge": 8553.4
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ККС",
+      "headcount": 3,
+      "sum_thousand_tenge": 6971.4
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "ККС",
+      "headcount": 3,
+      "sum_thousand_tenge": 7742.7
+    },
+    {
+      "code": "MP 2",
+      "dzo": "ККС",
+      "headcount": 1,
+      "sum_thousand_tenge": 138000.0
+    },
+    {
+      "code": "PEN 23",
+      "dzo": "ККС",
+      "headcount": 39,
+      "sum_thousand_tenge": 564564.1
+    },
+    {
+      "code": "HEALTH 3.1",
+      "dzo": "ККС",
+      "headcount": 672,
+      "sum_thousand_tenge": 3805.0
+    },
+    {
+      "code": "HEALTH 2.1",
+      "dzo": "ККС",
+      "headcount": 7,
+      "sum_thousand_tenge": 1825.0
+    },
+    {
+      "code": "CH 1.3",
+      "dzo": "ККС",
+      "headcount": 150,
+      "sum_thousand_tenge": 33390.0
+    },
+    {
+      "code": "HEALTH 5.3",
+      "dzo": "ККС",
+      "headcount": 442,
+      "sum_thousand_tenge": 1992.0
+    },
+    {
+      "code": "EP 7",
+      "dzo": "ККС",
+      "headcount": 47,
+      "sum_thousand_tenge": 800.0
+    },
+    {
+      "code": "OPL 19",
+      "dzo": "ККС",
+      "headcount": 4,
+      "sum_thousand_tenge": 4470.8
+    },
+    {
+      "code": "OPL 8",
+      "dzo": "ККС",
+      "headcount": 22,
+      "sum_thousand_tenge": 16725.0
+    },
+    {
+      "code": "OPL 8",
+      "dzo": "ККС",
+      "headcount": 10,
+      "sum_thousand_tenge": 1940.0
+    },
+    {
+      "code": "PEN 17.4",
+      "dzo": "ККС",
+      "headcount": 7,
+      "sum_thousand_tenge": 1825.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "ККС",
+      "headcount": 47,
+      "sum_thousand_tenge": 1175.0
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "ККС",
+      "headcount": 220,
+      "sum_thousand_tenge": 17300.8
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "ККС",
+      "headcount": 2,
+      "sum_thousand_tenge": 140.0
+    },
+    {
+      "code": "PEN 1",
+      "dzo": "ККС",
+      "headcount": 7,
+      "sum_thousand_tenge": 350.0
+    },
+    {
+      "code": "PEN 17.1",
+      "dzo": "ККС",
+      "headcount": 3,
+      "sum_thousand_tenge": 180.0
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "УДТВ",
+      "headcount": 165,
+      "sum_thousand_tenge": 109980.0
+    },
+    {
+      "code": "EP 2",
+      "dzo": "УДТВ",
+      "headcount": 165,
+      "sum_thousand_tenge": 32439.0
+    },
+    {
+      "code": "EP 3",
+      "dzo": "УДТВ",
+      "headcount": 165,
+      "sum_thousand_tenge": 32439.0
+    },
+    {
+      "code": "EP 4",
+      "dzo": "УДТВ",
+      "headcount": 165,
+      "sum_thousand_tenge": 32439.0
+    },
+    {
+      "code": "EP 7",
+      "dzo": "УДТВ",
+      "headcount": 20,
+      "sum_thousand_tenge": 400.0
+    },
+    {
+      "code": "EP 8",
+      "dzo": "УДТВ",
+      "headcount": 20,
+      "sum_thousand_tenge": 200.0
+    },
+    {
+      "code": "MP 10.3",
+      "dzo": "УДТВ",
+      "headcount": 4,
+      "sum_thousand_tenge": 7864.0
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "УДТВ",
+      "headcount": 6,
+      "sum_thousand_tenge": 1180.0
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "УДТВ",
+      "headcount": 2,
+      "sum_thousand_tenge": 472.0
+    },
+    {
+      "code": "MP 9",
+      "dzo": "УДТВ",
+      "headcount": 12,
+      "sum_thousand_tenge": 2359.0
+    },
+    {
+      "code": "MP 3",
+      "dzo": "УДТВ",
+      "headcount": 1,
+      "sum_thousand_tenge": 197.0
+    },
+    {
+      "code": "MP 4.2",
+      "dzo": "УДТВ",
+      "headcount": 9,
+      "sum_thousand_tenge": 1769.0
+    },
+    {
+      "code": "MP 4.5",
+      "dzo": "УДТВ",
+      "headcount": 4,
+      "sum_thousand_tenge": 315.0
+    },
+    {
+      "code": "CH 2.2",
+      "dzo": "УДТВ",
+      "headcount": 95,
+      "sum_thousand_tenge": 3735.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "УДТВ",
+      "headcount": 61,
+      "sum_thousand_tenge": 7195.0
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "УДТВ",
+      "headcount": 5,
+      "sum_thousand_tenge": 9469.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "УДТВ",
+      "headcount": 165,
+      "sum_thousand_tenge": 99384.2
+    },
+    {
+      "code": "CH 1.2",
+      "dzo": "УДТВ",
+      "headcount": 80
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "УДТВ",
+      "headcount": 132,
+      "sum_thousand_tenge": 40586.5
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "УДТВ",
+      "headcount": 58,
+      "sum_thousand_tenge": 62973.2
+    },
+    {
+      "code": "PEN 16",
+      "dzo": "УДТВ",
+      "headcount": 39,
+      "sum_thousand_tenge": 1404.0
+    },
+    {
+      "code": "PEN 17.4",
+      "dzo": "УДТВ",
+      "headcount": 9,
+      "sum_thousand_tenge": 2717.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "УДТВ",
+      "headcount": 18,
+      "sum_thousand_tenge": 450.0
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "УДТВ",
+      "headcount": 36,
+      "sum_thousand_tenge": 2831.0
+    },
+    {
+      "code": "PEN 14.2",
+      "dzo": "УДТВ",
+      "headcount": 1,
+      "sum_thousand_tenge": 25.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "УДТВ",
+      "headcount": 38,
+      "sum_thousand_tenge": 2988.0
+    },
+    {
+      "code": "PEN 13",
+      "dzo": "УДТВ",
+      "headcount": 38,
+      "sum_thousand_tenge": 2988.0
+    },
+    {
+      "code": "PEN 8",
+      "dzo": "УДТВ",
+      "headcount": 39,
+      "sum_thousand_tenge": 3067.0
+    },
+    {
+      "code": "PEN 25",
+      "dzo": "УДТВ",
+      "headcount": 2,
+      "sum_thousand_tenge": 140.0
+    },
+    {
+      "code": "PEN 1",
+      "dzo": "УДТВ",
+      "headcount": 4,
+      "sum_thousand_tenge": 200.0
+    },
+    {
+      "code": "PEN 17.5",
+      "dzo": "УДТВ",
+      "headcount": 3,
+      "sum_thousand_tenge": 150.0
+    },
+    {
+      "code": "EP 2",
+      "dzo": "Кэтеринг",
+      "headcount": 824,
+      "sum_thousand_tenge": 129598.7
+    },
+    {
+      "code": "EP 3",
+      "dzo": "Кэтеринг",
+      "headcount": 821,
+      "sum_thousand_tenge": 129126.9
+    },
+    {
+      "code": "EP 4",
+      "dzo": "Кэтеринг",
+      "headcount": 802,
+      "sum_thousand_tenge": 126138.6
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "Кэтеринг",
+      "headcount": 451,
+      "sum_thousand_tenge": 54833.5
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "Кэтеринг",
+      "headcount": 594,
+      "sum_thousand_tenge": 49467.4
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "Кэтеринг",
+      "headcount": 196,
+      "sum_thousand_tenge": 130515.0
+    },
+    {
+      "code": "MP 10.3",
+      "dzo": "Кэтеринг",
+      "headcount": 53,
+      "sum_thousand_tenge": 13653.0
+    },
+    {
+      "code": "MP 10.4",
+      "dzo": "Кэтеринг",
+      "headcount": 1,
+      "sum_thousand_tenge": 298.0
+    },
+    {
+      "code": "MP 3",
+      "dzo": "Кэтеринг",
+      "headcount": 1,
+      "sum_thousand_tenge": 248.0
+    },
+    {
+      "code": "MP 2",
+      "dzo": "Кэтеринг",
+      "headcount": 4,
+      "sum_thousand_tenge": 596.0
+    },
+    {
+      "code": "EP 7",
+      "dzo": "Кэтеринг",
+      "headcount": 142,
+      "sum_thousand_tenge": 3586.0
+    },
+    {
+      "code": "MP 4.1",
+      "dzo": "Кэтеринг",
+      "headcount": 21,
+      "sum_thousand_tenge": 3128.0
+    },
+    {
+      "code": "HEALTH 3.3",
+      "dzo": "Кэтеринг",
+      "headcount": 40,
+      "sum_thousand_tenge": 2525.0
+    },
+    {
+      "code": "CH 2.3",
+      "dzo": "Кэтеринг",
+      "headcount": 34,
+      "sum_thousand_tenge": 3170.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "Кэтеринг",
+      "headcount": 727,
+      "sum_thousand_tenge": 57171.0
+    },
+    {
+      "code": "PEN 21",
+      "dzo": "Кэтеринг",
+      "headcount": 16,
+      "sum_thousand_tenge": 12712.0
+    },
+    {
+      "code": "PEN 20",
+      "dzo": "Кэтеринг",
+      "headcount": 5,
+      "sum_thousand_tenge": 24944.0
+    },
+    {
+      "code": "HEALTH 3.2",
+      "dzo": "Кэтеринг",
+      "headcount": 825,
+      "sum_thousand_tenge": 74250.0
+    },
+    {
+      "code": "HEALTH 1.1",
+      "dzo": "Кэтеринг",
+      "headcount": 15,
+      "sum_thousand_tenge": 3900.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "Кэтеринг",
+      "headcount": 366,
+      "sum_thousand_tenge": 139882.0
+    },
+    {
+      "code": "HEALTH 3.5",
+      "dzo": "Кэтеринг",
+      "headcount": 469,
+      "sum_thousand_tenge": 127385.0
+    },
+    {
+      "code": "EVENTS 1",
+      "dzo": "Кэтеринг",
+      "headcount": 5,
+      "sum_thousand_tenge": 5500.0
+    },
+    {
+      "code": "EVENTS 2",
+      "dzo": "Кэтеринг",
+      "headcount": 11,
+      "sum_thousand_tenge": 2272.0
+    },
+    {
+      "code": "OPL 5",
+      "dzo": "Кэтеринг",
+      "headcount": 80,
+      "sum_thousand_tenge": 37081.1
+    },
+    {
+      "code": "OPL 8",
+      "dzo": "Кэтеринг",
+      "headcount": 74,
+      "sum_thousand_tenge": 27559.4
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "Кэтеринг",
+      "headcount": 825,
+      "sum_thousand_tenge": 312318.5
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "Кэтеринг",
+      "headcount": 140,
+      "sum_thousand_tenge": 2333.4
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "Кэтеринг",
+      "headcount": 164,
+      "sum_thousand_tenge": 7165.0
+    },
+    {
+      "code": "PEN 13",
+      "dzo": "Кэтеринг",
+      "headcount": 177,
+      "sum_thousand_tenge": 7733.0
+    },
+    {
+      "code": "PEN 8",
+      "dzo": "Кэтеринг",
+      "headcount": 177,
+      "sum_thousand_tenge": 7733.0
+    },
+    {
+      "code": "EP 2",
+      "dzo": "КазГПЗ",
+      "headcount": 883,
+      "sum_thousand_tenge": 173597.8
+    },
+    {
+      "code": "EP 3",
+      "dzo": "КазГПЗ",
+      "headcount": 883,
+      "sum_thousand_tenge": 173597.8
+    },
+    {
+      "code": "EP 4",
+      "dzo": "КазГПЗ",
+      "headcount": 883,
+      "sum_thousand_tenge": 173597.8
+    },
+    {
+      "code": "MP 8",
+      "dzo": "КазГПЗ",
+      "headcount": 883,
+      "sum_thousand_tenge": 531856.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "КазГПЗ",
+      "headcount": 302,
+      "sum_thousand_tenge": 35623.9
+    },
+    {
+      "code": "HEALTH 2.4",
+      "dzo": "КазГПЗ",
+      "headcount": 70,
+      "sum_thousand_tenge": 20525.0
+    },
+    {
+      "code": "HEALTH 2.4",
+      "dzo": "КазГПЗ",
+      "headcount": 70,
+      "sum_thousand_tenge": 187483.0
+    },
+    {
+      "code": "HEALTH 1.1",
+      "dzo": "КазГПЗ",
+      "headcount": 90,
+      "sum_thousand_tenge": 7150.0
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "КазГПЗ",
+      "headcount": 1,
+      "sum_thousand_tenge": 727245.4
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "КазГПЗ",
+      "headcount": 399,
+      "sum_thousand_tenge": 104627.3
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "КазГПЗ",
+      "headcount": 399,
+      "sum_thousand_tenge": 130784.1
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "КазГПЗ",
+      "headcount": 399,
+      "sum_thousand_tenge": 523136.6
+    },
+    {
+      "code": "PEN 17.4",
+      "dzo": "КазГПЗ",
+      "headcount": 1,
+      "sum_thousand_tenge": 25872.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "КазГПЗ",
+      "headcount": 168,
+      "sum_thousand_tenge": 14627.0
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "КазГПЗ",
+      "headcount": 352,
+      "sum_thousand_tenge": 27681.3
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "КазГПЗ",
+      "headcount": 352,
+      "sum_thousand_tenge": 27681.3
+    },
+    {
+      "code": "PEN 13",
+      "dzo": "КазГПЗ",
+      "headcount": 352,
+      "sum_thousand_tenge": 27681.3
+    },
+    {
+      "code": "PEN 8",
+      "dzo": "КазГПЗ",
+      "headcount": 352,
+      "sum_thousand_tenge": 27681.3
+    },
+    {
+      "code": "PEN 1",
+      "dzo": "КазГПЗ",
+      "headcount": 30,
+      "sum_thousand_tenge": 1500.0
+    },
+    {
+      "code": "OPL 1",
+      "dzo": "Каспий Битум",
+      "headcount": 136,
+      "sum_thousand_tenge": 130910.0
+    },
+    {
+      "code": "OPL 2",
+      "dzo": "Каспий Битум",
+      "headcount": 136,
+      "sum_thousand_tenge": 159906.0
+    },
+    {
+      "code": "OPL 3",
+      "dzo": "Каспий Битум",
+      "headcount": 136,
+      "sum_thousand_tenge": 30344.0
+    },
+    {
+      "code": "OPL 5",
+      "dzo": "Каспий Битум",
+      "headcount": 24,
+      "sum_thousand_tenge": 8301.0
+    },
+    {
+      "code": "OPL 9",
+      "dzo": "Каспий Битум",
+      "headcount": 20,
+      "sum_thousand_tenge": 30984.0
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "Каспий Битум",
+      "headcount": 159,
+      "sum_thousand_tenge": 83932.0
+    },
+    {
+      "code": "PB 2",
+      "dzo": "Каспий Битум",
+      "headcount": 223,
+      "sum_thousand_tenge": 659079.0
+    },
+    {
+      "code": "PB 1",
+      "dzo": "Каспий Битум",
+      "headcount": 223,
+      "sum_thousand_tenge": 159539.0
+    },
+    {
+      "code": "OiOT 2",
+      "dzo": "Каспий Битум",
+      "headcount": 225,
+      "sum_thousand_tenge": 127585.0
+    },
+    {
+      "code": "EP 2",
+      "dzo": "Каспий Битум",
+      "headcount": 230,
+      "sum_thousand_tenge": 45218.0
+    },
+    {
+      "code": "EP 3",
+      "dzo": "Каспий Битум",
+      "headcount": 232,
+      "sum_thousand_tenge": 46485.0
+    },
+    {
+      "code": "EP 4",
+      "dzo": "Каспий Битум",
+      "headcount": 230,
+      "sum_thousand_tenge": 45218.0
+    },
+    {
+      "code": "EP 1",
+      "dzo": "Каспий Битум",
+      "headcount": 50,
+      "sum_thousand_tenge": 4522.0
+    },
+    {
+      "code": "EP 7",
+      "dzo": "Каспий Битум",
+      "headcount": 5,
+      "sum_thousand_tenge": 629.0
+    },
+    {
+      "code": "EP 8",
+      "dzo": "Каспий Битум",
+      "headcount": 7,
+      "sum_thousand_tenge": 275.0
+    },
+    {
+      "code": "EP 14",
+      "dzo": "Каспий Битум",
+      "headcount": 25,
+      "sum_thousand_tenge": 3185.0
+    },
+    {
+      "code": "MP 8",
+      "dzo": "Каспий Битум",
+      "headcount": 225,
+      "sum_thousand_tenge": 163428.0
+    },
+    {
+      "code": "POS 1",
+      "dzo": "Каспий Битум",
+      "headcount": 5,
+      "sum_thousand_tenge": 4718.0
+    },
+    {
+      "code": "EVD 2",
+      "dzo": "Каспий Битум",
+      "headcount": 16,
+      "sum_thousand_tenge": 4404.0
+    },
+    {
+      "code": "MP 10.3",
+      "dzo": "Каспий Битум",
+      "headcount": 7,
+      "sum_thousand_tenge": 4129.0
+    },
+    {
+      "code": "MP 1",
+      "dzo": "Каспий Битум",
+      "headcount": 15,
+      "sum_thousand_tenge": 2949.0
+    },
+    {
+      "code": "CH 6.4",
+      "dzo": "Каспий Битум",
+      "headcount": 4,
+      "sum_thousand_tenge": 1384.0
+    },
+    {
+      "code": "CH 6.1",
+      "dzo": "Каспий Битум",
+      "headcount": 53,
+      "sum_thousand_tenge": 20840.0
+    },
+    {
+      "code": "CH 7",
+      "dzo": "Каспий Битум",
+      "headcount": 13,
+      "sum_thousand_tenge": 2340.0
+    },
+    {
+      "code": "CH 4",
+      "dzo": "Каспий Битум",
+      "headcount": 15,
+      "sum_thousand_tenge": 5898.0
+    },
+    {
+      "code": "MP 4.4",
+      "dzo": "Каспий Битум",
+      "headcount": 1,
+      "sum_thousand_tenge": 197.0
+    },
+    {
+      "code": "CH 1.1",
+      "dzo": "Каспий Битум",
+      "headcount": 198,
+      "sum_thousand_tenge": 52420.0
+    },
+    {
+      "code": "CH 2.1",
+      "dzo": "Каспий Битум",
+      "headcount": 338,
+      "sum_thousand_tenge": 13290.0
+    },
+    {
+      "code": "PEN 19",
+      "dzo": "Каспий Битум",
+      "headcount": 1,
+      "sum_thousand_tenge": 4231.0
+    },
+    {
+      "code": "CH 3.3",
+      "dzo": "Каспий Битум",
+      "headcount": 137,
+      "sum_thousand_tenge": 14596.0
+    },
+    {
+      "code": "HEALTH 2.7",
+      "dzo": "Каспий Битум",
+      "headcount": 67,
+      "sum_thousand_tenge": 13400.0
+    },
+    {
+      "code": "MP 3",
+      "dzo": "Каспий Битум",
+      "headcount": 1,
+      "sum_thousand_tenge": 118.0
+    },
+    {
+      "code": "PEN 5",
+      "dzo": "Каспий Битум",
+      "headcount": 9,
+      "sum_thousand_tenge": 708.0
+    },
+    {
+      "code": "PEN 6",
+      "dzo": "Каспий Битум",
+      "headcount": 9,
+      "sum_thousand_tenge": 708.0
+    },
+    {
+      "code": "PEN 8",
+      "dzo": "Каспий Битум",
+      "headcount": 9,
+      "sum_thousand_tenge": 708.0
+    },
+    {
+      "code": "PEN 4",
+      "dzo": "Каспий Битум",
+      "headcount": 3,
+      "sum_thousand_tenge": 236.0
+    },
+    {
+      "code": "PEN 3",
+      "dzo": "Каспий Битум",
+      "headcount": 9,
+      "sum_thousand_tenge": 1769.0
+    },
+    {
+      "code": "PEN 17.5",
+      "dzo": "Каспий Битум",
+      "headcount": 4,
+      "sum_thousand_tenge": 472.0
+    },
+    {
+      "code": "PEN 17.3",
+      "dzo": "Каспий Битум",
+      "headcount": 2,
+      "sum_thousand_tenge": 200.0
+    },
+    {
+      "code": "OPL 17",
+      "dzo": "Каспий Битум",
+      "headcount": 41,
+      "sum_thousand_tenge": 4844.0
+    },
+    {
+      "code": "OPL 4",
+      "dzo": "Каспий Битум",
+      "headcount": 159,
+      "sum_thousand_tenge": 83932.0
+    },
+    {
+      "code": "ESP 1",
+      "dzo": "Каспий Битум",
+      "headcount": 223,
+      "sum_thousand_tenge": 159539.0
+    },
+    {
+      "code": "MP 9",
+      "dzo": "Каспий Битум",
+      "headcount": 32,
+      "sum_thousand_tenge": 6291.0
     }
   ]
 }
