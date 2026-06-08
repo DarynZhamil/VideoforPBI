@@ -99,6 +99,9 @@ def sheet_to_long_records(df: pd.DataFrame) -> list[dict]:
             v = val if isinstance(val, (int, float)) else str(val).strip()
             if v == "" or v is None:
                 continue
+            # Для сумм пропускаем нули (в svod_summa 0 = «фактически не платили»)
+            if isinstance(v, (int, float)) and v == 0:
+                continue
             records.append({
                 "code": code_s,
                 "name": name_s,
@@ -117,10 +120,10 @@ def main() -> None:
     df_svod = pd.read_excel(SRC_XLSX, sheet_name="Свод", header=None)
     df_summa = pd.read_excel(SRC_XLSX, sheet_name="Свод сумма", header=None)
 
-    # svod_razmer — LONG формат: критично, чтобы модель не путала ДЗО на пустых ячейках
+    # Обе таблицы — LONG формат. Это критично, чтобы модель не съезжала по столбцам ДЗО.
+    # svod_summa тоже сжимается: пустых/нулевых ячеек ~85%, остаётся только реальный факт.
     svod = sheet_to_long_records(df_svod)
-    # svod_summa — WIDE формат: там почти все ячейки числовые, экономим токены
-    summa = sheet_to_wide_records(df_summa)
+    summa = sheet_to_long_records(df_summa)
 
     result = {
         "meta": {
